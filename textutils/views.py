@@ -1,9 +1,24 @@
 #I have created this file 
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse('''<h1> Hussain </h1>
-                            <a href ="https://github.com/"> GitHub </a>''')
+    
+    return render(request,'index.html')
 
-def about(request):
-    return HttpResponse("<h1>This is about hussain</h1>")
+def removepunc(request):
+    print(request.GET.get("Text"))
+    return HttpResponse("Remove Punctuation")
+
+def capitalizefirst(request):
+    return HttpResponse('''<a href ='/'>Back</a> 
+                            <h1>Capitalize first</h1>''')
+
+def newlineremover(request):
+    return HttpResponse("New Line removed")
+
+def spaceremover(request):
+    return HttpResponse("Space removeed")
+
+def charactercount(request):
+    return HttpResponse("Character Count")
