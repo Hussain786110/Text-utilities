@@ -9,7 +9,13 @@ def index(request):
 def analyze(request):
     djtext = request.GET.get("Text","default")
     removepunctuation = request.GET.get("removepunc","Off")
-    print(removepunctuation)
-    print(djtext)
-    return HttpResponse("Remove Punctuation")
+    analyzed = ""
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    if removepunctuation == "on":
+        for char in djtext:
+            if char not in punctuations:
+                analyzed+=char
+
+    params = {"purpose": "Remove Punctuations","analyzed_text":analyzed}
+    return render(request,"analyze.html",params)
 
