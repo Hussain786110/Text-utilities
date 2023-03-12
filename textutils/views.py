@@ -6,19 +6,10 @@ def index(request):
     
     return render(request,'index.html')
 
-def removepunc(request):
-    print(request.GET.get("Text"))
+def analyze(request):
+    djtext = request.GET.get("Text","default")
+    removepunctuation = request.GET.get("removepunc","Off")
+    print(removepunctuation)
+    print(djtext)
     return HttpResponse("Remove Punctuation")
 
-def capitalizefirst(request):
-    return HttpResponse('''<a href ='/'>Back</a> 
-                            <h1>Capitalize first</h1>''')
-
-def newlineremover(request):
-    return HttpResponse("New Line removed")
-
-def spaceremover(request):
-    return HttpResponse("Space removeed")
-
-def charactercount(request):
-    return HttpResponse("Character Count")

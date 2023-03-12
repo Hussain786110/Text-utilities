@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is a Django Page</title>
+    <title>TextUtils</title>
 </head>
 
 <body>
     <h1>Welcome to Text Analyzer. Enter your Text below </h1>
-    <form action="removepunc" method="get">
+    <form action="analyze" method="get">
         <textarea name="Text" style="width: 971px; height: 216px;"></textarea>
+        <input type="checkbox" name="removepunc"> Remove Punctuation <br>
         <button type="submit">Anlayze Text</button>
 
     </form>
