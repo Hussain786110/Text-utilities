@@ -19,3 +19,11 @@ def analyze(request):
     params = {"purpose": "Remove Punctuations","analyzed_text":analyzed}
     return render(request,"analyze.html",params)
 
+
+def exercise(request):
+
+    return HttpResponse('''<a href = "www.facebook.com">Facebook</a> <br>
+                            <a href = "www.Google.com">Google</a> <br>
+                            <a href = "www.Rediff.com">Rediff </a><br>
+                            <a href = "www.Yahoo.com">Yahoo</a> <br>''')
+
