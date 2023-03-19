@@ -46,7 +46,10 @@ def analyze(request):
     elif extraspaceremover_text == "on":
         analyzed = ""
         for index, char in enumerate(djtext):
-            if not djtext[index] == " " and djtext[index+1] == " ":
+            if (index+1) < len(djtext):
+                if not (djtext[index] == " " and djtext[index+1] == " "):
+                    analyzed += char
+            else:
                 analyzed += char
         params = {"purpose": "Remove Extra space",
                   "analyzed_text": analyzed}
